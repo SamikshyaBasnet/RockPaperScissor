@@ -1,0 +1,111 @@
+.headerWrapper {
+  max-width: 100%;
+  padding: 12px;
+  /* border: 1px solid hsl(217, 16%, 45%); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.titlesWrapper>h2 {
+  color: rgb(235, 169, 26);
+  font-size: 25px;
+  letter-spacing: -2.4 !important;
+}
+
+.headerWrapper .titlesWrapper img {
+  display: block;
+  width: 100%;
+}
+
+
+.headerWrapper .scoreWrapper {
+  background: rgb(208, 237, 216);
+  margin-top: 20px;
+  display: flex;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+.headerWrapper .scoreWrapper.lost {
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.headerWrapper .scoreWrapper span {
+  color: hsl(229, 46%, 7%);
+  margin-top: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.headerWrapper .scoreWrapper p {
+  margin-left: 20px;
+  font-size: 2em;
+  color: hsl(229, 25%, 31%);
+}
+
+.headerWrapper .scoreWrapper.lost p {
+  animation: LostColorChange 2.5s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.headerWrapper .scoreWrapper.won p {
+  animation: WonColorChange 2.5s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes LostColorChange {
+  from {
+    color: hsl(349, 71%, 52%);
+  }
+
+  to {
+    color: hsl(229, 25%, 31%);
+  }
+}
+
+@keyframes WonColorChange {
+  from {
+    color: hsl(189, 59%, 53%);
+  }
+
+  to {
+    color: hsl(229, 25%, 31%);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .headerWrapper .titlesWrapper img {
+    display: block;
+    width: 75%;
+  }
+}
